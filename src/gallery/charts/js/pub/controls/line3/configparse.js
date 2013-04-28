@@ -17,6 +17,8 @@ KISSY.add('brix/gallery/charts/js/pub/controls/line3/configparse',function(S,Bas
 				shape:0,
 				area:0,
 
+				scales:[],
+
 				fills:{
 					normals:['0x458AE6', '0x94CC5C'],
 					overs  :['0x135EBF', '0x78A64B']
@@ -51,6 +53,7 @@ KISSY.add('brix/gallery/charts/js/pub/controls/line3/configparse',function(S,Bas
 			o.shape = __data.getAttribute('shape') && String(__data.getAttribute('shape')) ? Number(__data.getAttribute('shape')) : o.shape
 			o.area = __data.getAttribute('area') && String(__data.getAttribute('area')) ? Number(__data.getAttribute('area')) : o.area
 
+			o.scales = __data.getAttribute('scales') && String(__data.getAttribute('scales')) ? String(__data.getAttribute('scales')).split(',') : o.scales
 			var __fills = xmlDoc.getElementsByTagName("colors")[0]
 			if(__fills){
 				o.fills.normals = __fills.getAttribute('normals') && String(__fills.getAttribute('normals')) ? String(__fills.getAttribute('normals')).split(',') : o.fills.normals
